@@ -21,9 +21,8 @@ public class Letra extends AuditModel{
     private Integer plazoTasa;
 
     @NotNull
-    @Size(max = 8)
     @Column(name = "tipo_tasa")
-    private String tipoTasa;
+    private Boolean tipoTasa;
 
     @NotNull
     @Column(name = "porcentaje_tasa")
@@ -53,11 +52,10 @@ public class Letra extends AuditModel{
     private Float retencion;
 
     @NotNull
-    @Size(max = 5)
     @Column(name = "tipo_moneda")
-    private String tipoMoneda;
+    private Boolean tipoMoneda;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "cartera_id", nullable = false)
-    private Cartera cartera;
+    @JoinColumn(name = "usuarios_id", nullable = false)
+    private Usuario usuario;
 }

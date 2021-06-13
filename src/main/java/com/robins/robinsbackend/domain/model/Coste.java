@@ -12,14 +12,17 @@ public class Coste extends AuditModel{
     private Long id;
 
     @NotNull
-    @Size(max = 7)
-    private String tipo;
+    private Boolean tipo;
 
     @NotNull
     private String motivo;
 
     @NotNull
-    private Float valor;
+    @Column(name = "valor_expresado")
+    private Boolean valorExpresado;
+
+    @NotNull
+    private Float monto;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "letra_id", nullable = false)

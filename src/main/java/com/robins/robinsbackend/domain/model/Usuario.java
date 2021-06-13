@@ -12,11 +12,6 @@ public class Usuario extends AuditModel{
     private Long id;
 
     @NotNull
-    @Size(max = 20)
-    @Column(unique = true)
-    private String usuario;
-
-    @NotNull
     @Size(max = 15)
     private String contrasenha;
 
@@ -33,10 +28,7 @@ public class Usuario extends AuditModel{
     private String telefono;
 
     @NotNull
-    private String email;
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "cartera_id", nullable = false)
-    private Cartera cartera;
+    @Column(unique = true)
+    private String correo;
 
 }

@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 public class UsuarioResource extends AuditModel {
 
     private Long id;
-    private String usuario;
     private String contrasenha;
     private String nombre;
     private String dni;
@@ -22,14 +21,6 @@ public class UsuarioResource extends AuditModel {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
 
     public String getContrasenha() {

@@ -5,9 +5,11 @@ import com.robins.robinsbackend.domain.model.AuditModel;
 public class CosteResource extends AuditModel {
 
     private Long id;
-    private String tipo;
+    private Boolean tipo;
     private String motivo;
+    private Boolean valorExpresado;
     private Float valor;
+
 
     public Long getId() {
         return id;
@@ -17,11 +19,11 @@ public class CosteResource extends AuditModel {
         this.id = id;
     }
 
-    public String getTipo() {
+    public Boolean getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Boolean tipo) {
         this.tipo = tipo;
     }
 
@@ -31,6 +33,14 @@ public class CosteResource extends AuditModel {
 
     public void setMotivo(String motivo) {
         this.motivo = motivo;
+    }
+
+    public Boolean getValorExpresado() {
+        return valorExpresado;
+    }
+
+    public void setValorExpresado(Boolean valorExpresado) {
+        this.valorExpresado = valorExpresado;
     }
 
     public Float getValor() {
