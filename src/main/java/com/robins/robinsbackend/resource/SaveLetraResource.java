@@ -16,8 +16,7 @@ public class SaveLetraResource {
 
     @NotNull
     @NotBlank
-    @Size(max = 8)
-    private String tipoTasa;
+    private Boolean tipoTasa;
 
     @NotNull
     @NotBlank
@@ -47,8 +46,7 @@ public class SaveLetraResource {
 
     @NotNull
     @NotBlank
-    @Size(max = 5)
-    private String tipoMoneda;
+    private Boolean tipoMoneda;
 
     public Integer getDiasPorAnho() {
         return diasPorAnho;
@@ -66,11 +64,11 @@ public class SaveLetraResource {
         this.plazoTasa = plazoTasa;
     }
 
-    public String getTipoTasa() {
+    public Boolean getTipoTasa() {
         return tipoTasa;
     }
 
-    public void setTipoTasa(String tipoTasa) {
+    public void setTipoTasa(Boolean tipoTasa) {
         this.tipoTasa = tipoTasa;
     }
 
@@ -130,11 +128,11 @@ public class SaveLetraResource {
         this.retencion = retencion;
     }
 
-    public String getTipoMoneda() {
+    public Boolean getTipoMoneda() {
         return tipoMoneda;
     }
 
-    public void setTipoMoneda(String tipoMoneda) {
+    public void setTipoMoneda(Boolean tipoMoneda) {
         this.tipoMoneda = tipoMoneda;
     }
 }
