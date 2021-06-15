@@ -20,6 +20,10 @@ public class SaveCosteResource {
     @NotBlank
     private Float valor;
 
+    @NotNull
+    @NotBlank
+    private Long letraId;
+
 
     public Boolean getTipo() {
         return tipo;
@@ -51,5 +55,13 @@ public class SaveCosteResource {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    public Long getLetraId() {
+        return letraId;
+    }
+
+    public void setLetraId(Long letraId) {
+        this.letraId = letraId;
     }
 }
