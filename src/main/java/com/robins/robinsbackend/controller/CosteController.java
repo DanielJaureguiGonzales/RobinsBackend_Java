@@ -21,7 +21,7 @@ public class CosteController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping()
     RobinsResponse<List<CosteResource>> getAllCostes() throws Exception{
-        return new RobinsResponse<>("200","Lista of Costes" , costeService.getAll());
+        return new RobinsResponse<>("200","Lista de Costes" , costeService.getAll());
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -33,13 +33,13 @@ public class CosteController {
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/create")
     RobinsResponse<CosteResource> createCoste(@RequestBody @Valid SaveCosteResource saveCosteResource) throws Exception{
-        return new RobinsResponse<>("200","Registred SubscriptionPlan" , costeService.createCoste(saveCosteResource));
+        return new RobinsResponse<>("200","Coste creado" , costeService.createCoste(saveCosteResource));
     }
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/delete")
     RobinsResponse<String> deleteCoste(@RequestParam Long id) throws Exception{
-        return new RobinsResponse<>("200","Registred SubscriptionPlan" , costeService.deleteCoste(id));
+        return new RobinsResponse<>("200","Coste borrado" , costeService.deleteCoste(id));
     }
 
 }

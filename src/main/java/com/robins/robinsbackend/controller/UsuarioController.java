@@ -34,18 +34,18 @@ public class UsuarioController {
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/create")
     RobinsResponse<UsuarioResource> createUser(@RequestBody @Valid SaveUsuarioResource saveUsuarioResource) throws Exception{
-        return new RobinsResponse<>("200","Registred SubscriptionPlan" , usuarioService.createUsuario(saveUsuarioResource));
+        return new RobinsResponse<>("200","Usuario creado" , usuarioService.createUsuario(saveUsuarioResource));
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/update/{id}")
     RobinsResponse<UsuarioResource> updateUser(@RequestBody @Valid SaveUsuarioResource saveUsuarioResource,@PathVariable Long id) throws Exception{
-        return new RobinsResponse<>("200","Registred SubscriptionPlan" , usuarioService.updateUsuario(saveUsuarioResource,id));
+        return new RobinsResponse<>("200","Usuario actualizado" , usuarioService.updateUsuario(saveUsuarioResource,id));
     }
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/delete")
     RobinsResponse<String> deleteUser(@RequestParam Long id) throws Exception{
-        return new RobinsResponse<>("200","Registred SubscriptionPlan" , usuarioService.deleteUsuario(id));
+        return new RobinsResponse<>("200","Usuario borrado" , usuarioService.deleteUsuario(id));
     }
 }

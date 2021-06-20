@@ -24,7 +24,7 @@ public class LetraController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping()
     RobinsResponse<List<LetraResource>> getAllUsers() throws Exception{
-        return new RobinsResponse<>("200","Lista of Usuarios" , letraService.getAll());
+        return new RobinsResponse<>("200","Lista de Letras" , letraService.getAll());
     }
 
     @ResponseStatus(HttpStatus.OK)

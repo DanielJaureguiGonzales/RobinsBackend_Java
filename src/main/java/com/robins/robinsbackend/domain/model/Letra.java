@@ -34,6 +34,14 @@ public class Letra extends AuditModel{
     @Column(name = "porcentaje_tasa")
     private Float porcentajeTasa;
 
+    @Column(name = "valor_recibido")
+    private Integer valor_recibido;
+
+    @Column(name = "descuento")
+    private Float descuento;
+
+    @Column(name = "tcea")
+    private Float tcea;
 
     @Column(name = "periodo_capital")
     private Integer periodoCapital;

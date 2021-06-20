@@ -21,7 +21,7 @@ public class LetraResource extends AuditModel {
     private Date fechaVencimiento;
     private Float valorNominal;
     private Float retencion;
-    private String tipoMoneda;
+    private Boolean tipoMoneda;
     private Long usuarioId;
 
 }
