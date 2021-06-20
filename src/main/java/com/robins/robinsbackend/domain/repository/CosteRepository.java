@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface CosteRepository extends JpaRepository<Coste,Long> {
 
-    List<Coste> getAllByLetra(Letra letra);
+    List<Coste> findAllByLetra_Id(Long letraId);
 }

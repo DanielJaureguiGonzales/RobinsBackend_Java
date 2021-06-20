@@ -73,7 +73,7 @@ public class LetraServiceImpl implements LetraService {
 
 		Letra letra = letraRepository.findById(letra_id).orElseThrow(() -> new Exception("Letra_id_no_encontrada"));
 		LetraResource letraResource = modelMapper.map(letra,LetraResource.class);
-		List<Coste> costes = costeRepository.getAllByLetra(letra);
+		List<Coste> costes = costeRepository.findAllByLetra_Id(letra_id);
 		double ci = 0;
 		double cf = 0;
 
@@ -139,7 +139,7 @@ public class LetraServiceImpl implements LetraService {
 
 	}
 
-	public Double convertirTEP1aTEP2(Float tep1,Integer n1,int n2){
+	public double convertirTEP1aTEP2(Float tep1,int n1,float n2){
 		Double tep2=(double)((Math.pow(1+(tep1/100),(n2/n1))-1));
 		return tep2;
 	}

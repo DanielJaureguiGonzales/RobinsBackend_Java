@@ -1,6 +1,7 @@
 package com.robins.robinsbackend.service;
 
 import com.robins.robinsbackend.domain.model.Coste;
+import com.robins.robinsbackend.domain.model.Letra;
 import com.robins.robinsbackend.domain.repository.CosteRepository;
 import com.robins.robinsbackend.domain.repository.LetraRepository;
 import com.robins.robinsbackend.domain.service.CosteService;
@@ -41,7 +42,13 @@ public class CosteServiceImpl implements CosteService {
     public CosteResource createCoste(SaveCosteResource saveCosteResource) throws Exception {
 
         if(!(letraRepository.findById(saveCosteResource.getLetraId()).isPresent())){throw new Exception("LetraId no existe");}
-        Coste coste = modelMapper.map(saveCosteResource,Coste.class);
+        Letra letra = letraRepository.findById(saveCosteResource.getLetraId()).orElseThrow(()-> new Exception("Letra_no_existe"));
+        Coste coste = new Coste();
+        coste.setMonto(saveCosteResource.getMonto());
+        coste.setMotivo(saveCosteResource.getMotivo());
+        coste.setTipo(saveCosteResource.getTipo());
+        coste.setValorExpresado(saveCosteResource.getValorExpresado());
+        coste.setLetra(letra);
         try{
             coste = costeRepository.save(coste);
             System.out.println("Coste creado");
