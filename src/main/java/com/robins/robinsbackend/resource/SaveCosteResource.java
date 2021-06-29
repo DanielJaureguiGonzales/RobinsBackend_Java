@@ -1,43 +1,24 @@
 package com.robins.robinsbackend.resource;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.*;
 
+@Getter
+@Setter
 public class SaveCosteResource {
 
-    @NotNull
-    @NotBlank
-    @Size(max = 7)
-    private String tipo;
 
-    @NotNull
-    @NotBlank
+    private Boolean tipo;
+
     private String motivo;
 
-    @NotNull
-    @NotBlank
-    private Float valor;
+    private Boolean valorExpresado;
 
-    public String getTipo() {
-        return tipo;
-    }
+    private Float monto;
+    private Long letraId;
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 
-    public String getMotivo() {
-        return motivo;
-    }
 
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-
-    public Float getValor() {
-        return valor;
-    }
-
-    public void setValor(Float valor) {
-        this.valor = valor;
-    }
 }

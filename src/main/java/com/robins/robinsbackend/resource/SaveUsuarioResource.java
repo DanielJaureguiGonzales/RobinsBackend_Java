@@ -7,11 +7,6 @@ public class SaveUsuarioResource {
 
     @NotNull
     @NotBlank
-    @Size(max = 20)
-    private String usuario;
-
-    @NotNull
-    @NotBlank
     @Size(max = 15)
     private String contrasenha;
 
@@ -33,13 +28,6 @@ public class SaveUsuarioResource {
     @NotBlank
     private String correo;
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public String getContrasenha() {
         return contrasenha;
