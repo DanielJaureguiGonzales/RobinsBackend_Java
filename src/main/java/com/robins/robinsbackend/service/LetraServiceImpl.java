@@ -125,10 +125,11 @@ public class LetraServiceImpl implements LetraService {
 			*/
 
 			Float valor_entregado = (float)(letraResource.getValorNominal()+cf-letraResource.getRetencion());
+			System.out.println(valor_entregado);
 			long startTime = letra.getFechadescuento().getTime();
 			long endTime = letra.getFechaVencimiento().getTime();
 			long diffTime = endTime-startTime;
-			int tiempo = (int) TimeUnit.DAYS.convert(diffTime,TimeUnit.MILLISECONDS);
+			float tiempo = (float) TimeUnit.DAYS.convert(diffTime,TimeUnit.MILLISECONDS);
 			Float TCEA = (float)(Math.pow((valor_entregado/valor_recibido),(letraResource.getDiasPorAnho()/tiempo))-1);
 			letraResource.setTCEA(TCEA*100);
 
@@ -151,8 +152,8 @@ public class LetraServiceImpl implements LetraService {
 			long startTime = letra.getFechadescuento().getTime();
 			long endTime = letra.getFechaVencimiento().getTime();
 			long diffTime = endTime-startTime;
-			int tiempo = (int) TimeUnit.DAYS.convert(diffTime,TimeUnit.MILLISECONDS);
-			Float TCEA = (float)(Math.pow((valor_entregado/valor_recibido),(letraResource.getDiasPorAnho()/tiempo))-1);
+			float tiempo = (float) TimeUnit.DAYS.convert(diffTime,TimeUnit.MILLISECONDS);
+			Float TCEA = (float)(Math.pow((-(valor_entregado)/valor_recibido),(letraResource.getDiasPorAnho()/tiempo))-1);
 			letraResource.setTCEA(TCEA*100);
 		}
 
